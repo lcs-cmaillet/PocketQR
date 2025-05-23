@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		853C019B2DE0A2CF00868590 /* PocketQRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C01992DE0A2CF00868590 /* PocketQRApp.swift */; };
+		853C01A12DE0A2E900868590 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C019F2DE0A2E900868590 /* ContentView.swift */; };
+		853C01A22DE0A2E900868590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853C019E2DE0A2E900868590 /* Assets.xcassets */; };
 		859F2BEC2DDCD989007F5E55 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 859F2BEB2DDCD989007F5E55 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		853C01992DE0A2CF00868590 /* PocketQRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketQRApp.swift; sourceTree = "<group>"; };
+		853C019E2DE0A2E900868590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		853C019F2DE0A2E900868590 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		859F2BCC2DDCD696007F5E55 /* PocketQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		859F2BCE2DDCD696007F5E55 /* PocketQR */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PocketQR;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		859F2BC92DDCD696007F5E55 /* Frameworks */ = {
@@ -34,10 +32,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		853C019D2DE0A2E900868590 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		853C01A02DE0A2E900868590 /* PocketQR */ = {
+			isa = PBXGroup;
+			children = (
+				853C019D2DE0A2E900868590 /* Model */,
+				853C01A32DE0A2F400868590 /* ViewModels */,
+				853C01A42DE0A2FC00868590 /* Views */,
+				853C019E2DE0A2E900868590 /* Assets.xcassets */,
+			);
+			path = PocketQR;
+			sourceTree = "<group>";
+		};
+		853C01A32DE0A2F400868590 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		853C01A42DE0A2FC00868590 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				853C019F2DE0A2E900868590 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		859F2BC32DDCD696007F5E55 = {
 			isa = PBXGroup;
 			children = (
-				859F2BCE2DDCD696007F5E55 /* PocketQR */,
+				853C01992DE0A2CF00868590 /* PocketQRApp.swift */,
+				853C01A02DE0A2E900868590 /* PocketQR */,
 				859F2BCD2DDCD696007F5E55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,9 +96,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				859F2BCE2DDCD696007F5E55 /* PocketQR */,
 			);
 			name = PocketQR;
 			packageProductDependencies = (
@@ -118,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853C01A22DE0A2E900868590 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853C01A12DE0A2E900868590 /* ContentView.swift in Sources */,
+				853C019B2DE0A2CF00868590 /* PocketQRApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
