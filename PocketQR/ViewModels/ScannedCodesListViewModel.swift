@@ -19,6 +19,10 @@ class ScannedCodesListViewModel: Observable {
     //MARK: Function(s)
     
     // 1. Add a code
-    
+    func add(newCode: scannedCodes) {
+        
+        //Append the provided QRs to the list of tracked QRs
+        self.scannedCodes.append(newCode)
+    }
 }
 

@@ -40,6 +40,7 @@ struct ScannedCodesListView: View {
                     isPresentingScanner = false
                     
                     // 2. Add a new QR code (call the function on the view model)
+                    
                 }
             }
         }
