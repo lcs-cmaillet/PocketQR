@@ -11,6 +11,7 @@
 		853C01A12DE0A2E900868590 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C019F2DE0A2E900868590 /* ContentView.swift */; };
 		853C01A22DE0A2E900868590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853C019E2DE0A2E900868590 /* Assets.xcassets */; };
 		853C01A72DE0A35E00868590 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853C01A62DE0A35E00868590 /* Preview Assets.xcassets */; };
+		853C01AB2DE0A3D400868590 /* QRCodeScannerExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C01AA2DE0A3D400868590 /* QRCodeScannerExampleView.swift */; };
 		859F2BEC2DDCD989007F5E55 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 859F2BEB2DDCD989007F5E55 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
@@ -19,6 +20,7 @@
 		853C019E2DE0A2E900868590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853C019F2DE0A2E900868590 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		853C01A62DE0A35E00868590 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		853C01AA2DE0A3D400868590 /* QRCodeScannerExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerExampleView.swift; sourceTree = "<group>"; };
 		859F2BCC2DDCD696007F5E55 /* PocketQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 		853C01A42DE0A2FC00868590 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				853C01AA2DE0A3D400868590 /* QRCodeScannerExampleView.swift */,
 				853C019F2DE0A2E900868590 /* ContentView.swift */,
 			);
 			path = Views;
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				853C01A12DE0A2E900868590 /* ContentView.swift in Sources */,
+				853C01AB2DE0A3D400868590 /* QRCodeScannerExampleView.swift in Sources */,
 				853C019B2DE0A2CF00868590 /* PocketQRApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +318,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,6 +347,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
