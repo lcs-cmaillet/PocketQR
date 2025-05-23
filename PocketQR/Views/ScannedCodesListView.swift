@@ -1,5 +1,5 @@
 //
-//  QRCodeScannerExampleView.swift
+//  ScannedCodesListView.swift
 //  PocketQR
 //
 //  Created by Collin Maillet on 2025-05-23.
@@ -8,7 +8,10 @@
 import CodeScanner
 import SwiftUI
 
-struct QRCodeScannerExampleView: View {
+struct ScannedCodesListView: View {
+    
+    // Establish a connect to the view model
+    
     @State private var isPresentingScanner = false
     @State private var scannedCode: String?
 
@@ -18,6 +21,8 @@ struct QRCodeScannerExampleView: View {
                 Text("Scanned value was:")
                     .bold()
                 Text("\(code)")
+                
+                // 3. Show a scrollable list of scanned code
             } else {
                 ContentUnavailableView("Nothing scanned yet", systemImage: "questionmark", description: Text("Please scan a code to get started"))
             }
@@ -33,8 +38,14 @@ struct QRCodeScannerExampleView: View {
                 if case let .success(result) = response {
                     scannedCode = result.string
                     isPresentingScanner = false
+                    
+                    // 2. Add a new QR code (call the function on the view model)
                 }
             }
         }
     }
+}
+
+#Preview {
+    ScannedCodesListView()
 }
