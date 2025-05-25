@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ScannedCodesListView: View {
     
-    // Establish a connect to the view model
+    // Establish a connection to the view model
+    @State var viewModel = ScannedCodesListViewModel()
     
     @State private var isPresentingScanner = false
     @State private var scannedCode: String?
@@ -40,6 +41,7 @@ struct ScannedCodesListView: View {
                     isPresentingScanner = false
                     
                     // 2. Add a new QR code (call the function on the view model)
+                    viewModel.add(newCode: Code(scanedData: result.string))
                     
                 }
             }

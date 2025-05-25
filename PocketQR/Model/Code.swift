@@ -9,7 +9,7 @@ import Foundation
 
 struct Code: Identifiable {
     
-    //MARK:Stored proprties
+    //MARK: Stored proprties
     let id = UUID()
     let scanedData: String
     
