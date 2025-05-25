@@ -17,36 +17,41 @@ struct ScannedCodesListView: View {
     @State private var scannedCode: String?
 
     var body: some View {
-        VStack(spacing: 10) {
-            if let code = scannedCode {
-                Text("Scanned value was:")
-                    .bold()
-                Text("\(code)")
-                
-                // 3. Show a scrollable list of scanned codes
-                List(viewModel.scannedCodes) { currentCode in
-                    Text(currentCode.scanedData)
+        NavigationStack {
+            VStack(spacing: 10) {
+                if let code = scannedCode {
                     
+                    // 3. Show a scrollable list of scanned codes
+                    List(viewModel.scannedCodes) { currentCode in
+                        NavigationLink {
+                            QRCodeView(providedString: currentCode.scanedData)
+                        } label: {
+                            Text(currentCode.scanedData)
+                        }
+
+                        
+                    }
+                } else {
+                    ContentUnavailableView("Nothing scanned yet", systemImage: "questionmark", description: Text("Please scan a code to get started"))
                 }
-            } else {
-                ContentUnavailableView("Nothing scanned yet", systemImage: "questionmark", description: Text("Please scan a code to get started"))
-            }
 
-            Button("Scan Code") {
-                isPresentingScanner = true
-            }
+                Button("Scan Code") {
+                    isPresentingScanner = true
+                }
 
-            Text("Scan a QR code to begin")
-        }
-        .sheet(isPresented: $isPresentingScanner) {
-            CodeScannerView(codeTypes: [.qr]) { response in
-                if case let .success(result) = response {
-                    scannedCode = result.string
-                    isPresentingScanner = false
-                    
-                    // 2. Add a new QR code (call the function on the view model)
-                    viewModel.add(newCode: Code(scanedData: result.string))
-                    
+                Text("Scan a QR code to begin")
+            }
+            .navigationTitle("Pocket QR")
+            .sheet(isPresented: $isPresentingScanner) {
+                CodeScannerView(codeTypes: [.qr]) { response in
+                    if case let .success(result) = response {
+                        scannedCode = result.string
+                        isPresentingScanner = false
+                        
+                        // 2. Add a new QR code (call the function on the view model)
+                        viewModel.add(newCode: Code(scanedData: result.string))
+                        
+                    }
                 }
             }
         }
