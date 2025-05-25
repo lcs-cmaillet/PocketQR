@@ -23,7 +23,11 @@ struct ScannedCodesListView: View {
                     .bold()
                 Text("\(code)")
                 
-                // 3. Show a scrollable list of scanned code
+                // 3. Show a scrollable list of scanned codes
+                List(viewModel.scannedCodes) { currentCode in
+                    Text(currentCode.scanedData)
+                    
+                }
             } else {
                 ContentUnavailableView("Nothing scanned yet", systemImage: "questionmark", description: Text("Please scan a code to get started"))
             }
