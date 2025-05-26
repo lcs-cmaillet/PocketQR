@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Code: Identifiable {
+struct Code: Identifiable, Codable {
     
     //MARK: Stored proprties
     let id = UUID()

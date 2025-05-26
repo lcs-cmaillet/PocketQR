@@ -3,54 +3,59 @@
 //  PocketQR
 //
 //  Created by Collin Maillet on 2025-05-23.
-//
+//This was written with the help of chat gbt here is the conversation link below
+// https://chatgpt.com/share/6834bcd5-cb5c-8008-b7ab-0ddc54671e65
 
 import CodeScanner
 import SwiftUI
 
 struct ScannedCodesListView: View {
     
-    // Establish a connection to the view model
+    // Your view model (auto-saves & loads)
     @State var viewModel = ScannedCodesListViewModel()
     
+    // Scanner sheet toggle
     @State private var isPresentingScanner = false
-    @State private var scannedCode: String?
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 10) {
-                if let code = scannedCode {
-                    
-                    // 3. Show a scrollable list of scanned codes
+            VStack(spacing: 16) {
+                
+                // Show placeholder if empty, otherwise show list
+                if viewModel.scannedCodes.isEmpty {
+                    ContentUnavailableView(
+                        "Nothing scanned yet",
+                        systemImage: "questionmark",
+                        description: Text("Please scan a code to get started")
+                    )
+                } else {
                     List(viewModel.scannedCodes) { currentCode in
                         NavigationLink {
                             QRCodeView(providedString: currentCode.scanedData)
                         } label: {
                             Text(currentCode.scanedData)
                         }
-
-                        
                     }
-                } else {
-                    ContentUnavailableView("Nothing scanned yet", systemImage: "questionmark", description: Text("Please scan a code to get started"))
+                    .listStyle(.plain)
                 }
 
+                // Always show these controls
                 Button("Scan Code") {
                     isPresentingScanner = true
                 }
+                .buttonStyle(.borderedProminent)
 
                 Text("Scan a QR code to begin")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
             }
+            .padding()
             .navigationTitle("Pocket QR")
             .sheet(isPresented: $isPresentingScanner) {
                 CodeScannerView(codeTypes: [.qr]) { response in
                     if case let .success(result) = response {
-                        scannedCode = result.string
                         isPresentingScanner = false
-                        
-                        // 2. Add a new QR code (call the function on the view model)
                         viewModel.add(newCode: Code(scanedData: result.string))
-                        
                     }
                 }
             }
@@ -58,6 +63,9 @@ struct ScannedCodesListView: View {
     }
 }
 
-#Preview {
-    ScannedCodesListView()
+struct ScannedCodesListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ScannedCodesListView()
+    }
 }
+
